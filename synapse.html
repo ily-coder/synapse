@@ -5,7 +5,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
 <style>
-/* Layout: hero with the bot emblem and pitch on the left and a self-playing chat on the right; palette taken from the logo (deep navy, electric blue, violet). */
 :root{
   --bg:#060B2E; --surface:#0E1850; --ink:#F2F5FF; --muted:#A4B0E0; --line:#22307A;
   --accent:#3E9BFF; --pop:#A67BFF; --accent-ink:#04103A; --soft:#14226B; --good:#3CCB93; --bad:#FF7B72;
@@ -47,7 +46,6 @@ button{font:inherit;color:inherit;cursor:pointer}
 :focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:8px}
 .eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
 
-/* header */
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line);margin:0 calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:0 max(16px,env(safe-area-inset-left,0px))}
 .bar{display:flex;align-items:center;gap:20px;height:64px;max-width:1120px;margin:0 auto}
 .logo{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:700;font-size:18px;text-decoration:none;letter-spacing:.02em}
@@ -58,7 +56,6 @@ nav a:hover{background:var(--soft);color:var(--ink)}
 .theme{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;flex:none}
 .theme svg{width:18px;height:18px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round}
 
-/* hero */
 .hero{position:relative;padding-block:48px 72px;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
 .hero::before{content:"";position:absolute;z-index:0;left:-10%;top:-8%;width:70%;height:90%;background:radial-gradient(closest-side,var(--glow),transparent 70%);pointer-events:none}
 #net{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
@@ -80,7 +77,6 @@ nav a:hover{background:var(--soft);color:var(--ink)}
 .facts b{font-family:var(--f-display);font-size:26px;line-height:1}
 .facts span{font-size:13px;color:var(--muted);margin-top:6px}
 
-/* chat simulation */
 .chat{background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 24px 70px -28px var(--glow);display:flex;flex-direction:column;height:560px}
 .chat-top{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line)}
 .chat-top img{width:40px;height:40px;border-radius:50%;flex:none;display:block}
@@ -112,13 +108,11 @@ nav a:hover{background:var(--soft);color:var(--ink)}
 .sendbtn.hit{transform:scale(.88)}
 .sendbtn svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
-/* bands */
 section.band{padding-block:72px;border-top:1px solid var(--line)}
 .head{max-width:60ch;margin-bottom:36px}
 .head h2{font-size:clamp(24px,3.2vw,36px);margin-top:10px}
 .head p{color:var(--muted);margin-top:14px;font-size:17px}
 
-/* audiences */
 .aud{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:14px;min-width:0}
 .card .tag{align-self:flex-start;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:var(--soft);color:var(--accent)}
@@ -133,7 +127,6 @@ section.band{padding-block:72px;border-top:1px solid var(--line)}
 .card .try{margin-top:auto;align-self:flex-start;border:1px solid var(--line);background:transparent;border-radius:12px;padding:10px 14px;font-weight:600;font-size:14px}
 .card .try:hover{border-color:var(--accent);color:var(--accent)}
 
-/* quiz */
 .quizbox{display:grid;grid-template-columns:260px 1fr;gap:20px}
 .topics{display:flex;flex-direction:column;gap:8px}
 .topic{text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:14px 16px;font-weight:600}
@@ -156,7 +149,6 @@ section.band{padding-block:72px;border-top:1px solid var(--line)}
 .result .score{font-family:var(--f-display);font-size:56px;color:var(--accent);line-height:1}
 .result p{margin-top:12px;color:var(--muted)}
 
-/* faq */
 .faq{display:grid;gap:10px;max-width:820px}
 details{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:0 20px}
 summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:600;display:flex;justify-content:space-between;gap:16px;align-items:center}
@@ -343,7 +335,6 @@ footer img{width:32px;height:32px;border-radius:50%;display:block}
 
 <script>
 (function(){
-  /* theme */
   var root=document.documentElement;
   document.getElementById('theme').addEventListener('click',function(){
     var attr=root.getAttribute('data-theme');
@@ -351,7 +342,6 @@ footer img{width:32px;height:32px;border-radius:50%;display:block}
     root.setAttribute('data-theme',dark?'light':'dark');
   });
 
-  /* neuron background */
   var cv=document.getElementById('net'),cx=cv.getContext('2d'),nodes=[],W=0,H=0,dpr=Math.min(devicePixelRatio||1,2);
   var still=matchMedia('(prefers-reduced-motion: reduce)').matches;
   function size(){
@@ -380,7 +370,6 @@ footer img{width:32px;height:32px;border-radius:50%;display:block}
   size();draw();
   var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){size();if(still)draw()},150)});
 
-  /* self-playing chat */
   var SCENES=[
     [
       {q:'Объясни, что такое дроби',a:'Дробь показывает часть целого. Представь пиццу, разрезанную на 4 куска. Ты съел 1 кусок, значит съел 1/4 пиццы.\n\nНижнее число говорит, на сколько частей поделили целое. Верхнее говорит, сколько частей взяли.'},
@@ -437,7 +426,7 @@ footer img{width:32px;height:32px;border-radius:50%;display:block}
     var pairs=SCENES[i];
     for(var n=0;n<pairs.length;n++){
       var p=pairs[n];
-      /* user types */
+
       for(var c=1;c<=p.q.length;c++){
         setFake(p.q.slice(0,c),true);
         await sleep(c%5===0?55:36,my);if(my!==token)return;
@@ -483,7 +472,6 @@ footer img{width:32px;height:32px;border-radius:50%;display:block}
   }
   play(0);
 
-  /* quiz */
   var BANK=[
     {id:'math',name:'Математика',sub:'Дроби, 5 класс',qs:[
       {q:'Какая дробь равна половине?',o:['1/3','2/4','3/5','2/3'],a:1,w:'2/4 сокращается на 2 и даёт 1/2.'},
